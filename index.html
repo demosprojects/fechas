@@ -28,6 +28,13 @@
             padding: 20px;
         }
 
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -42,13 +49,6 @@
 
         button:hover {
             background-color: #45a049;
-        }
-
-        iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-            margin-top: 30px;
         }
 
         footer {
@@ -87,16 +87,10 @@
             background-color: #3e8e41;
         }
 
-        /* Padding-bottom for content to avoid overlapping with footer */
         .content {
             padding-bottom: 100px;
         }
     </style>
-    <script>
-        function cargarIframe(url) {
-            document.getElementById("iframe").src = url;
-        }
-    </script>
 </head>
 <body>
 
@@ -105,16 +99,22 @@
     </header>
 
     <div class="content">
-        <button onclick="cargarIframe('https://docs.google.com/spreadsheets/d/e/2PACX-1vTXt_YmTdB04vkRVS9EisPr70Yj120rpxdD46aYKwLszi51-lUgQQcnvBiJNWCPN5qYa4QtAdcYzkw0/pubhtml')">Fechas</button> 
-        <button onclick="cargarIframe('https://docs.google.com/spreadsheets/d/e/2PACX-1vTYZEes5tJD0r2ipQtI6wKkUklsgyHUgwSF3uSU0RsIJ4wocJXZ5XQr5_IeXfoo8g/pubhtml')">Notas</button> 
-        <button onclick="cargarIframe('https://docs.google.com/spreadsheets/d/e/2PACX-1vT8xFMcu_fsaKyzET9PWWFBLyT_SvMGj_4hgisxfen4u9-tfQN63Q6lAkcSj9T70O0zc5Asi_-ggOFX/pubhtml')">Materias Aprobadas</button> 
-    </div>
+        <!-- Botón para mostrar la hoja de cálculo de Fechas -->
+        <button onclick="showSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vTXt_YmTdB04vkRVS9EisPr70Yj120rpxdD46aYKwLszi51-lUgQQcnvBiJNWCPN5qYa4QtAdcYzkw0/pubhtml')">Ver Fechas</button>
 
-    <iframe id="iframe" src=""></iframe>
+        <!-- Botón para mostrar la hoja de cálculo de Notas -->
+        <button onclick="showSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vTYZEes5tJD0r2ipQtI6wKkUklsgyHUgwSF3uSU0RsIJ4wocJXZ5XQr5_IeXfoo8g/pubhtml')">Ver Notas</button>
+
+        <!-- Botón para mostrar la hoja de cálculo de Materias Aprobadas -->
+        <button onclick="showSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vT8xFMcu_fsaKyzET9PWWFBLyT_SvMGj_4hgisxfen4u9-tfQN63Q6lAkcSj9T70O0zc5Asi_-ggOFX/pubhtml')">Ver Materias Aprobadas</button>
+
+        <!-- Iframe donde se mostrarán las hojas de cálculo -->
+        <iframe id="sheetFrame" src="" style="display: none;"></iframe>
+    </div>
     
     <footer>
         <div class="content">
-            <h2>Selecciona una opción para descargar:</h2>
+            <p>Selecciona una opción para descargar:</p>
             <div class="buttons">
                 <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXt_YmTdB04vkRVS9EisPr70Yj120rpxdD46aYKwLszi51-lUgQQcnvBiJNWCPN5qYa4QtAdcYzkw0/pub?output=xlsx" download>Descargar Fechas</a>
                 <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYZEes5tJD0r2ipQtI6wKkUklsgyHUgwSF3uSU0RsIJ4wocJXZ5XQr5_IeXfoo8g/pub?output=xlsx" download>Descargar Notas</a>
@@ -122,6 +122,14 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function showSheet(url) {
+            var iframe = document.getElementById('sheetFrame');
+            iframe.src = url;
+            iframe.style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
