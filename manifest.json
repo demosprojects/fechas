@@ -1,21 +1,21 @@
 {
-  "name": "Fechas",
-  "short_name": "Calificaciones",
-  "start_url": "/fechas/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#4CAF50",
-  "description": "Actividades por hacer.",
-  "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}
+    "name": "Fechas",
+    "short_name": "Control académico",
+    "start_url": "/fechas/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4CAF50",
+    "description": "Agenda de estudios.",
+    "icons": [
+      {
+        "src": "https://raw.githubusercontent.com/demosprojects/fechas/main/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/demosprojects/fechas/main/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
